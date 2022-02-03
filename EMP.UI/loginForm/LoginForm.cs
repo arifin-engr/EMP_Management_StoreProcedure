@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EMP.UI.Registraion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,11 @@ namespace EMP.UI
             InitializeComponent();
         }
 
-        
+        private void btn_go_registration_Click(object sender, EventArgs e)
+        {
+            RegForm regForm = new RegForm();
+            regForm.Show();
+            this.Hide();
+        }
     }
 }
