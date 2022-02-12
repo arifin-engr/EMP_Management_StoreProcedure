@@ -1,4 +1,7 @@
-﻿using EMP.UI.Registraion;
+﻿using EMP.BLL;
+using EMP.Model;
+using EMP.UI.EmployeeUI;
+using EMP.UI.Registraion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +16,7 @@ namespace EMP.UI
 {
     public partial class LoginForm : Form
     {
+        AppUserManager UserManager = new AppUserManager();
         public LoginForm()
         {
             InitializeComponent();
@@ -23,6 +27,32 @@ namespace EMP.UI
             RegForm regForm = new RegForm();
             regForm.Show();
             this.Hide();
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AppUser appUser = new AppUser();
+                appUser.AppUserId = txt_UserID.Text;
+                appUser.Password = txt_passWord.Text;
+                UserManager.CheckUser(appUser);
+                MainForm mainForm = new MainForm();
+                this.Hide();
+                mainForm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+            
+
+
+
+
+
         }
     }
 }
