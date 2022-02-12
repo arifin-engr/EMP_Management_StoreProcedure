@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EMP.DAL\EMP.DAL.csproj" />
+    <ProjectReference Include="..\EMP.Model\EMP.Model.csproj" />
+  </ItemGroup>
+
 </Project>

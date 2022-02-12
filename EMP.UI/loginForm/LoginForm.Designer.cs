@@ -36,8 +36,8 @@ namespace EMP.UI
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_go_registration = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
+            this.txt_UserID = new System.Windows.Forms.TextBox();
             this.txt_passWord = new System.Windows.Forms.TextBox();
-            this.txt_userId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -73,7 +73,7 @@ namespace EMP.UI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(371, 16);
+            this.label1.Location = new System.Drawing.Point(363, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 32);
             this.label1.TabIndex = 0;
@@ -84,8 +84,8 @@ namespace EMP.UI
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.btn_go_registration);
             this.panel2.Controls.Add(this.btn_Login);
+            this.panel2.Controls.Add(this.txt_UserID);
             this.panel2.Controls.Add(this.txt_passWord);
-            this.panel2.Controls.Add(this.txt_userId);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(288, 111);
@@ -117,23 +117,25 @@ namespace EMP.UI
             this.btn_Login.TabIndex = 2;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            // 
+            // txt_UserID
+            // 
+            this.txt_UserID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_UserID.Location = new System.Drawing.Point(179, 58);
+            this.txt_UserID.Multiline = true;
+            this.txt_UserID.Name = "txt_UserID";
+            this.txt_UserID.Size = new System.Drawing.Size(126, 28);
+            this.txt_UserID.TabIndex = 1;
             // 
             // txt_passWord
             // 
-            this.txt_passWord.Location = new System.Drawing.Point(189, 111);
+            this.txt_passWord.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_passWord.Location = new System.Drawing.Point(179, 107);
             this.txt_passWord.Multiline = true;
             this.txt_passWord.Name = "txt_passWord";
             this.txt_passWord.Size = new System.Drawing.Size(126, 28);
             this.txt_passWord.TabIndex = 1;
-            // 
-            // txt_userId
-            // 
-            this.txt_userId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_userId.Location = new System.Drawing.Point(189, 57);
-            this.txt_userId.Multiline = true;
-            this.txt_userId.Name = "txt_userId";
-            this.txt_userId.Size = new System.Drawing.Size(126, 28);
-            this.txt_userId.TabIndex = 1;
             // 
             // label3
             // 
@@ -211,8 +213,8 @@ namespace EMP.UI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_go_registration;
         private System.Windows.Forms.Button btn_Login;
+        private System.Windows.Forms.TextBox txt_UserID;
         private System.Windows.Forms.TextBox txt_passWord;
-        private System.Windows.Forms.TextBox txt_userId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;

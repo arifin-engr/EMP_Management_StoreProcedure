@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EmployeeUI\" />
+    <ProjectReference Include="..\EMP.BLL\EMP.BLL.csproj" />
+    <ProjectReference Include="..\EMP.Model\EMP.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
