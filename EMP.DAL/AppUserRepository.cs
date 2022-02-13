@@ -32,9 +32,12 @@ namespace EMP.DAL
             sqlConnection.Close();
             if (row==true)
             {
-                throw new Exception("Successfully Saved");
+                throw new Exception("Successfully Saved.."+"UserId: "+appUser.AppUserId+" "+"Password: "+appUser.Password);
             }
         }
+
+      
+
         public DataTable Data(AppUser appUser)
         {
             

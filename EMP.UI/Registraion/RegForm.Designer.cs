@@ -33,6 +33,8 @@ namespace EMP.UI.Registraion
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_lastName = new System.Windows.Forms.TextBox();
@@ -51,8 +53,7 @@ namespace EMP.UI.Registraion
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_Password = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btn_backtoLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -93,6 +94,7 @@ namespace EMP.UI.Registraion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.btn_backtoLogin);
             this.panel2.Controls.Add(this.txt_Password);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.txt_phone);
@@ -117,6 +119,25 @@ namespace EMP.UI.Registraion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(784, 415);
             this.panel2.TabIndex = 3;
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_Password.Location = new System.Drawing.Point(469, 88);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(151, 29);
+            this.txt_Password.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(381, 91);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 21);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Password :";
             // 
             // txt_phone
             // 
@@ -297,24 +318,18 @@ namespace EMP.UI.Registraion
             this.label2.TabIndex = 0;
             this.label2.Text = "First Name :";
             // 
-            // txt_Password
+            // btn_backtoLogin
             // 
-            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_Password.Location = new System.Drawing.Point(469, 88);
-            this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(151, 29);
-            this.txt_Password.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(381, 91);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 21);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Password :";
+            this.btn_backtoLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_backtoLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_backtoLogin.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_backtoLogin.Location = new System.Drawing.Point(11, 365);
+            this.btn_backtoLogin.Name = "btn_backtoLogin";
+            this.btn_backtoLogin.Size = new System.Drawing.Size(116, 34);
+            this.btn_backtoLogin.TabIndex = 17;
+            this.btn_backtoLogin.Text = "Back to Login";
+            this.btn_backtoLogin.UseVisualStyleBackColor = false;
+            this.btn_backtoLogin.Click += new System.EventHandler(this.btn_backtoLogin_Click);
             // 
             // RegForm
             // 
@@ -362,5 +377,6 @@ namespace EMP.UI.Registraion
         private System.Windows.Forms.TextBox txt_middleName;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btn_backtoLogin;
     }
 }
