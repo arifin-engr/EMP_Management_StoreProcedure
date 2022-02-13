@@ -11,7 +11,7 @@ namespace EMP.BLL
 {
    public class AppUserManager
     {
-        // private readonly AppUser AppUser;
+       
          AppUserRepository appUserRepository=new AppUserRepository();
         public bool Add(AppUser appUser)
         {
@@ -20,7 +20,7 @@ namespace EMP.BLL
                 if (appUser.Image !=null)
                 {
                     appUserRepository.Add(appUser);
-                    throw new Exception("Successfully Saved");
+                    throw new Exception("Successfully Saved.." + "UserId: " + appUser.AppUserId + " " + "Password: " + appUser.Password);
                 }
             }
             throw new Exception("AppUser Empty");
@@ -58,6 +58,22 @@ namespace EMP.BLL
             
         }
 
-        
+       
+        public List<AppUser> getCurrentUser(AppUser appUser)
+        {
+            List<AppUser> appUsersList = new List<AppUser>();
+            if (appUser !=null)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable= appUserRepository.Data(appUser);
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    appUser.Image = dr["Image"].ToString();
+                    appUser.AppUserId = dr["AppUserId"].ToString();
+                    appUsersList.Add(appUser);
+                }
+            }
+            return appUsersList;
+        }
     }
 }

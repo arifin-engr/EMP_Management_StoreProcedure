@@ -68,5 +68,12 @@ namespace EMP.UI.Registraion
             }
            
         }
+
+        private void btn_backtoLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Hide();
+            loginForm.Show();
+        }
     }
 }
