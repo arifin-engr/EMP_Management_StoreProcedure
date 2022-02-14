@@ -24,6 +24,7 @@ namespace EMP.UI.Registraion
         {
             InitializeComponent();
             gender_comboBox.DataSource = Enum.GetValues(typeof(Gender));
+            gender_comboBox.Text = "--select--";
         }
 
         private void btn_chooseImage_Click(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace EMP.UI.Registraion
             {
 
                 MessageBox.Show(ex.Message);
+                clear();
             }
            
         }
@@ -75,5 +77,22 @@ namespace EMP.UI.Registraion
             this.Hide();
             loginForm.Show();
         }
+
+        void clear()
+        {
+            txt_FirstName.Clear();
+            txt_middleName.Clear();
+            txt_lastName.Clear();
+            txt_email.Clear();
+            txt_Password.Clear();
+            txt_Address.Clear();
+            txt_phone.Clear();
+            image_.Image=null;
+            gender_comboBox.Text = "--select--";
+        }
+
+       
+            
+        
     }
 }

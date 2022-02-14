@@ -34,15 +34,20 @@ namespace EMP.UI.EmployeeUI
             this.btn_AllAppUser = new System.Windows.Forms.Button();
             this.btn_addEmployee = new System.Windows.Forms.Button();
             this.btn_AllEmployee = new System.Windows.Forms.Button();
+            this.Link_Logout = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.UserpictureBox = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,7 +58,7 @@ namespace EMP.UI.EmployeeUI
             this.panel1.Controls.Add(this.btn_AllEmployee);
             this.panel1.Location = new System.Drawing.Point(23, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(293, 436);
+            this.panel1.Size = new System.Drawing.Size(273, 436);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -105,9 +110,23 @@ namespace EMP.UI.EmployeeUI
             this.btn_AllEmployee.Text = "All Employee";
             this.btn_AllEmployee.UseVisualStyleBackColor = false;
             // 
+            // Link_Logout
+            // 
+            this.Link_Logout.AutoSize = true;
+            this.Link_Logout.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Link_Logout.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Link_Logout.Location = new System.Drawing.Point(1158, 36);
+            this.Link_Logout.Name = "Link_Logout";
+            this.Link_Logout.Size = new System.Drawing.Size(59, 20);
+            this.Link_Logout.TabIndex = 4;
+            this.Link_Logout.TabStop = true;
+            this.Link_Logout.Text = "Logout";
+            this.Link_Logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Link_Logout_LinkClicked_1);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.Link_Logout);
             this.panel2.Controls.Add(this.UserpictureBox);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -116,7 +135,6 @@ namespace EMP.UI.EmployeeUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1223, 68);
             this.panel2.TabIndex = 2;
-            
             // 
             // UserpictureBox
             // 
@@ -158,12 +176,30 @@ namespace EMP.UI.EmployeeUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee Management";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Location = new System.Drawing.Point(302, 74);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(921, 436);
+            this.panel3.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(912, 430);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1229, 522);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
@@ -173,6 +209,8 @@ namespace EMP.UI.EmployeeUI
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +227,8 @@ namespace EMP.UI.EmployeeUI
         private System.Windows.Forms.Button btn_addEmployee;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_AllAppUser;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.LinkLabel Link_Logout;
     }
 }

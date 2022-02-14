@@ -42,9 +42,17 @@ namespace EMP.UI.EmployeeUI
 
         private void btn_addEmployee_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            AddEmploye addEmploye = new AddEmploye();
+            addEmploye.Show();
         }
 
-       
+        
+        private void Link_Logout_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
     }
 }
