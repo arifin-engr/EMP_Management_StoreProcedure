@@ -9,7 +9,11 @@ namespace EMP.Model
 {
    public  class Employee: Person
     {
-        public Employee(int Id,string Designation, string firstName, string middleName, string lastName, string Email, string PhoneNo, string gender,string Address, string Image) : base(firstName, middleName, lastName, Email, PhoneNo, gender,Address, Image)
+        public Employee(string Designation, string firstName, string middleName, string lastName, string Email, string PhoneNo, string gender,string Address, string Image) : base(firstName, middleName, lastName, Email, PhoneNo, gender,Address, Image)
+        {
+            this.Designation = Designation;
+        }
+        public Employee()
         {
 
         }
