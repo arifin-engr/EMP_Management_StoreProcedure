@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,11 +67,13 @@ namespace EMP.UI.EmployeeUI
         {
             string imagePath = image_.ImageLocation;
             string imageFileName = image_.Name + "_" + txt_FirstName.Text + "_" + txt_lastName.Text;
-
+            FileStream fileStream = new FileStream(imagePath,FileMode.Open,FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader(fileStream);
+            byte[] images = binaryReader.ReadBytes((int)fileStream.Length);
             try
             {
 
-                Employee emp = new Employee() { Designation = txt_Designation.Text, FirstName = txt_FirstName.Text, MiddleName = txt_middleName.Text, LastName = txt_lastName.Text, Email = txt_email.Text, PhoneNo = txt_phone.Text, Gender = gender_comboBox.SelectedItem.ToString(), Address = txt_Address.Text, Image = imagePath };
+                Employee emp = new Employee() { Designation = txt_Designation.Text, FirstName = txt_FirstName.Text, MiddleName = txt_middleName.Text, LastName = txt_lastName.Text, Email = txt_email.Text, PhoneNo = txt_phone.Text, Gender = gender_comboBox.SelectedItem.ToString(), Address = txt_Address.Text, Image = images };
 
 
                 employeeMananger.Add(emp);
@@ -83,5 +86,7 @@ namespace EMP.UI.EmployeeUI
             }
 
         }
+
+       
     }
 }

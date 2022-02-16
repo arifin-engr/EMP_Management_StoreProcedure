@@ -36,7 +36,7 @@ namespace EMP.DAL
             }
         }
 
-      
+       
 
         public DataTable Data(AppUser appUser)
         {

@@ -2,6 +2,7 @@
 using EMP.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,23 @@ namespace EMP.BLL
                 }
             }
             throw new Exception("Employee Empty");
+        }
+
+        public DataTable getAllEmp()
+        {
+            DataTable dataTable = new DataTable();
+           dataTable=  employeeRepository.getAll();
+            return dataTable;
+        }
+
+        public DataTable getById(int id)
+        {
+            DataTable dataTable = new DataTable();
+            if (id >0)
+            {
+              dataTable=  employeeRepository.getById(id);
+            }
+            return dataTable;
         }
     }
 }

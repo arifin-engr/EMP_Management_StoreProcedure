@@ -17,9 +17,9 @@ namespace EMP.Model
         public string PhoneNo { get; set; }
         public string Gender { get; set; }
         public string Address { get; set; }
-        public string Image { get; set; }
+        
 
-        public Person(string firstName, string middleName, string lastName, string Email, string PhoneNo, string gender, string Address, string Image) : this()
+        public Person(string firstName, string middleName, string lastName, string Email, string PhoneNo, string gender, string Address) : this()
         {
            
             this.FirstName = firstName;
@@ -29,7 +29,7 @@ namespace EMP.Model
             this.PhoneNo = PhoneNo;
             this.Gender = gender;
             this.Address = Address;
-            this.Image = Image;
+            
            
         }
         public Person()

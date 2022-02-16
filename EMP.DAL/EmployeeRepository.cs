@@ -15,17 +15,17 @@ namespace EMP.DAL
         SqlConnection sqlConnection = new SqlConnection(connectionString);
         public void Add(Employee employee)
         {
-            string query = "sp_AddAppUsser";
+            string query = "sp_Employee";
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlConnection.Open();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = employee.getFullName();
+            sqlCommand.Parameters.AddWithValue("@Designation", SqlDbType.NVarChar).Value = employee.Designation;
             sqlCommand.Parameters.AddWithValue("@Email", SqlDbType.NVarChar).Value = employee.Email;
-            sqlCommand.Parameters.AddWithValue("@Password", SqlDbType.NVarChar).Value = employee.Designation;
+            sqlCommand.Parameters.AddWithValue("@phonNo", SqlDbType.NVarChar).Value = employee.PhoneNo;
             sqlCommand.Parameters.AddWithValue("@Gender", SqlDbType.NVarChar).Value = employee.Gender;
-            sqlCommand.Parameters.AddWithValue("@PhoneNo", SqlDbType.NVarChar).Value = employee.PhoneNo;
             sqlCommand.Parameters.AddWithValue("@Address", SqlDbType.NVarChar).Value = employee.Address;
-            sqlCommand.Parameters.AddWithValue("@Image", SqlDbType.NVarChar).Value = employee.Image;
+            sqlCommand.Parameters.AddWithValue("@Image", SqlDbType.Binary).Value = employee.Image;
 
             bool row = sqlCommand.ExecuteNonQuery() > 0;
             sqlConnection.Close();
@@ -40,14 +40,29 @@ namespace EMP.DAL
             throw new NotImplementedException();
         }
 
-        public void getAll()
+        public DataTable getAll()
         {
-            throw new NotImplementedException();
+            string query = "sp_getAllEmployee";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlConnection.Open();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+            return dataTable;
         }
 
-        public void getById(int? id)
+        public DataTable getById(int? id)
         {
-            throw new NotImplementedException();
+            string query = "sp_getEmpById";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlConnection.Open();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id;
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+            return dataTable;
         }
 
         public void Update(Employee employee)
