@@ -10,11 +10,12 @@ namespace EMP.Model
    public class AppUser: Person
     {
         
-        public AppUser(int Id, string AppUserId, string Password, string firstName, string middleName, string lastName, string Email, string PhoneNo, string gender,string Address, string Image): base(firstName, middleName, lastName, Email, PhoneNo, gender,Address, Image)
+        public AppUser(int Id, string AppUserId, string Password, string firstName, string middleName, string lastName, string Email, string PhoneNo, string gender,string Address, string Image): base(firstName, middleName, lastName, Email, PhoneNo, gender,Address)
         {
             this.Id = Id;
             this.AppUserId = AppUserId;
             this.Password = Password;
+            this.Image = Image;
         }
         public AppUser()
         {
@@ -25,8 +26,9 @@ namespace EMP.Model
         public int Id { get; set; }
         public string AppUserId { get; set; }
         public string Password { get; set; }
+        public string Image { get; set; }
 
-        
+
 
     }
 }

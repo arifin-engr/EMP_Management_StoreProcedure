@@ -41,13 +41,21 @@ namespace EMP.UI.EmployeeUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gv_emp = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_emp)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,7 +66,7 @@ namespace EMP.UI.EmployeeUI
             this.panel1.Controls.Add(this.btn_AllEmployee);
             this.panel1.Location = new System.Drawing.Point(23, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(273, 436);
+            this.panel1.Size = new System.Drawing.Size(193, 436);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -68,7 +76,7 @@ namespace EMP.UI.EmployeeUI
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(14, 261);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 50);
+            this.button1.Size = new System.Drawing.Size(168, 50);
             this.button1.TabIndex = 3;
             this.button1.Text = "Add New Employee";
             this.button1.UseVisualStyleBackColor = false;
@@ -80,7 +88,7 @@ namespace EMP.UI.EmployeeUI
             this.btn_AllAppUser.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_AllAppUser.Location = new System.Drawing.Point(14, 184);
             this.btn_AllAppUser.Name = "btn_AllAppUser";
-            this.btn_AllAppUser.Size = new System.Drawing.Size(237, 50);
+            this.btn_AllAppUser.Size = new System.Drawing.Size(168, 50);
             this.btn_AllAppUser.TabIndex = 2;
             this.btn_AllAppUser.Text = "All AppUser";
             this.btn_AllAppUser.UseVisualStyleBackColor = false;
@@ -92,7 +100,7 @@ namespace EMP.UI.EmployeeUI
             this.btn_addEmployee.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_addEmployee.Location = new System.Drawing.Point(14, 104);
             this.btn_addEmployee.Name = "btn_addEmployee";
-            this.btn_addEmployee.Size = new System.Drawing.Size(237, 50);
+            this.btn_addEmployee.Size = new System.Drawing.Size(168, 50);
             this.btn_addEmployee.TabIndex = 1;
             this.btn_addEmployee.Text = "Add New Employee";
             this.btn_addEmployee.UseVisualStyleBackColor = false;
@@ -105,7 +113,7 @@ namespace EMP.UI.EmployeeUI
             this.btn_AllEmployee.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_AllEmployee.Location = new System.Drawing.Point(14, 27);
             this.btn_AllEmployee.Name = "btn_AllEmployee";
-            this.btn_AllEmployee.Size = new System.Drawing.Size(237, 50);
+            this.btn_AllEmployee.Size = new System.Drawing.Size(168, 50);
             this.btn_AllEmployee.TabIndex = 0;
             this.btn_AllEmployee.Text = "All Employee";
             this.btn_AllEmployee.UseVisualStyleBackColor = false;
@@ -178,20 +186,85 @@ namespace EMP.UI.EmployeeUI
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(302, 74);
+            this.panel3.Controls.Add(this.gv_emp);
+            this.panel3.Location = new System.Drawing.Point(222, 74);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(921, 436);
+            this.panel3.Size = new System.Drawing.Size(1001, 436);
             this.panel3.TabIndex = 3;
             // 
-            // dataGridView1
+            // gv_emp
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(912, 430);
-            this.dataGridView1.TabIndex = 0;
+            this.gv_emp.AllowUserToAddRows = false;
+            this.gv_emp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gv_emp.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gv_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_emp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Name1,
+            this.Designation,
+            this.Email,
+            this.PhoneNo,
+            this.Gender,
+            this.Address,
+            this.EmpImage});
+            this.gv_emp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gv_emp.Location = new System.Drawing.Point(3, 3);
+            this.gv_emp.Name = "gv_emp";
+            this.gv_emp.RowTemplate.Height = 100;
+            this.gv_emp.Size = new System.Drawing.Size(992, 430);
+            this.gv_emp.TabIndex = 0;
+            this.gv_emp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_emp_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Name1
+            // 
+            this.Name1.DataPropertyName = "Name";
+            this.Name1.HeaderText = "Name";
+            this.Name1.Name = "Name1";
+            // 
+            // Designation
+            // 
+            this.Designation.DataPropertyName = "Designation";
+            this.Designation.HeaderText = "Designation";
+            this.Designation.Name = "Designation";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // PhoneNo
+            // 
+            this.PhoneNo.DataPropertyName = "PhoneNo";
+            this.PhoneNo.HeaderText = "PhoneNo";
+            this.PhoneNo.Name = "PhoneNo";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
+            // EmpImage
+            // 
+            this.EmpImage.DataPropertyName = "Image";
+            this.EmpImage.HeaderText = "Image";
+            this.EmpImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EmpImage.Name = "EmpImage";
+            this.EmpImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // MainForm
             // 
@@ -203,14 +276,13 @@ namespace EMP.UI.EmployeeUI
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
-            this.Text = "MainForm";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_emp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,7 +300,15 @@ namespace EMP.UI.EmployeeUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_AllAppUser;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gv_emp;
         private System.Windows.Forms.LinkLabel Link_Logout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Designation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewImageColumn EmpImage;
     }
 }
